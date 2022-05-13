@@ -30,15 +30,17 @@ function getSpringMeltStreak(temperature) {
                 currentLenght++;
 //начинается новая последовательность удовлетворяющая условию
 //начальный индекс
-            if (currentLenght == 1) {      
-                currentIndex = k
-            };
+            // if (currentLenght > 1) {      
+            //      currentIndex = k
+            // };
+            if (currentLenght > maxLenght) {    //если счетчик длины больше максимальной длинны
+                maxLenght = currentLenght;      // то сохраняем новое значение
+                // maxIndex = currentIndex;        //присваеваем новый индекс
+                };
+            // console.log(k)
             } else {
-                if (currentLenght > maxLenght) {    //если счетчик длины больше максимальной длинны
-                    maxLenght = currentLenght;  // то сохраняем новое значение
-                    maxIndex = currentIndex;    //присваеваем новый индекс
-                    };
-                currentLenght = 0 ;             //сброс счетчика
+                
+                   currentLenght = 0 ;                 //сброс счетчика
                 };
     };
         if (maxLenght > 0) {
@@ -46,12 +48,12 @@ function getSpringMeltStreak(temperature) {
         } else {
             console.log(0); 
         };  
-    return;
+    return maxLenght;
  };
 
- getSpringMeltStreak([10, 20, 30, 1, -10, 1, 2, 3])
- getSpringMeltStreak([-20, 30, -40, 50, 10, -10])
- getSpringMeltStreak([10, 20, 30, 0, -10, 5, 8, 1, 2, 3])
- getSpringMeltStreak([-10, 0, -10, 0, -10])
+//  getSpringMeltStreak([10, 20, 30, 1, 10, 1, 2, 3])
+//  getSpringMeltStreak([-20, 30, -40, 50, 10, -10])
+//  getSpringMeltStreak([10, 20, 30, 0, -10, 5, 8, 1, 2, 3])
+//  getSpringMeltStreak([-10, 0, -10, 0, -10])
 
-//  module.exports = getSpringMeltStreak;
+ module.exports = getSpringMeltStreak;

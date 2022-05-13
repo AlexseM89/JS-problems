@@ -28,6 +28,7 @@ function hexToRgb(color) {
          let itogResult = 'rgb('+ onePart+', '+twoPart+', '+freePart+')'
         // let itogResult = 'rgb(${onePart} , ${twoPart}, ${freePart})'
         console.log(itogResult)
+        return itogResult
     } else {
         let resultTwo = /^#{0,1}([a-f\d]{1})([a-f\d]{1})([a-f\d]{1})$/i.exec(color)
         // console.log(resultTwo[1]+resultTwo[1])
@@ -39,11 +40,15 @@ function hexToRgb(color) {
         let freePartTwo = parseInt(freePartTwoF, 16)
         let itogResultTwo = 'rgb('+ onePartTwo+', '+twoPartTwo+', '+freePartTwo+')'
         console.log(itogResultTwo)
+        return itogResultTwo
     }
+    
 }
 
-
+// module.exports = hexToRgb;
 
 hexToRgb('#000000')
 hexToRgb('#fff')
 hexToRgb('#800080')
+hexToRgb('#000')
+hexToRgb('#0f0')

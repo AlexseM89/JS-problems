@@ -22,20 +22,27 @@
 
 
 function metro(x, y) {
+   
+
     if (x>y){
         let putA = (x-y)-1
         let putB = (y-1)+(13-x)
         if (putA>putB){
             console.log(putB)
-        }else{console.log(putA)}
+        }else{
+            console.log(putA)
+        }
     }else{
         let putA = (y-x)-1
         let putB = (x-1)+(13-y)
         if (putA>putB){
             console.log(putB)
-        }else{console.log(putA)}
-    }
+        }else{
+            console.log(putA)
+        }
+    };
 }
+// console.log(metro(1, 2))
 metro(1, 2)
 metro(1, 3)
 metro(13, 1)

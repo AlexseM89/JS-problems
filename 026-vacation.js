@@ -69,3 +69,5 @@ console.log(vacation('29.02.2020'))
 console.log(vacation('16.11.2020'))
 console.log(vacation('22.02.2021'))
 console.log(vacation('30.12.2019'))
+
+module.exports = vacation;

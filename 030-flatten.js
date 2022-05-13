@@ -19,6 +19,6 @@ flatten([1, [2, 3]])
 flatten([1, [2, [3, 4]]])
 flatten([[], [[]], [[], [[[]]]]])
 flatten([1, [2, [3, [4]], 5]])
-// module.exports = flatten;
+module.exports = flatten;
 
 

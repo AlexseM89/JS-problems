@@ -21,7 +21,7 @@ function parentheses(value) {
 let a= 0
 let b= 0
 let c= 0
-if(value[0]!=')'||value[0]!='}'||value[0]!='>'||value !=''){
+if(value[0]!=')'||value[0]!='}'||value[0]!='>'||value.length ===0){
 for (let i = 0; i < value.length; i++) {
         if(value[i]!='('&& value[i]!=')'&&value[i]!='{'&&value[i]!='}'){
             // console.log(value[i])
@@ -46,16 +46,19 @@ for (let i = 0; i < value.length; i++) {
     let resC = c%2===0
     if ((resA&&resB&&resC)===true){
         console.log(true)
+        return true;
     }else{
         console.log(false) 
+        return false;
     }
 }else{
     console.log(false)
+    return false;
 }
 }
 parentheses('<>')
 parentheses('<}')
-parentheses(' ')
+parentheses('')
 parentheses('{')
 parentheses('<')
 parentheses('>')
@@ -66,7 +69,7 @@ parentheses('()}<>{')
 // console.log(resA)
 // console.log(resB)
 // console.log(resC)
-
+module.exports = parentheses;
 
 
 

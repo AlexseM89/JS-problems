@@ -18,11 +18,12 @@ function union(a, b) {
     let array = a.filter((number) => b.includes(number));
 //сортируем массив по возврастанию    
     array.sort((a,b)=> a-b);
-    return array;
+    let unikArray = array.filter((v, i, a) => a.indexOf(v) === i);
+    return unikArray;
 };
 
 // console.log(union([1, 1, 5, 2, 3], [5, 3, 7, 7]));
-// console.log(union([2, 4, 6, 8, 10, 12, 10, 8, 4, 2], [3, 6, 9, 12, 15, 18]));
+// console.log(union([2, 4, 6, 8, 10, 12, 10, 8, 6, 4, 2], [3, 6, 9, 12, 15, 18]));
 // console.log(union([1, 2, 3], [11, 0, -1]));
 
-// module.exports = union;
+module.exports = union;

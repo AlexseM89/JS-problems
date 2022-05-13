@@ -15,7 +15,7 @@ function searchAnagrams(value) {
    
 
 
-// module.exports = searchAnagrams;
+// 
 // let value = 'Вижу апельсин значит живу. Спаниель';
 //стартовую строку value очищаем от точек и разбиываем по пробелам на массив строк
 var b = value.replace(/\./g,'').split(' '); 
@@ -52,11 +52,12 @@ var map = resulMas.reduce((a,val)=>{
 //   console.log(b)
 
   let itogAnagram = b.join(" ")
-  console.log(itogAnagram)
+  // console.log(itogAnagram)
+  return itogAnagram
 
 }
-searchAnagrams('Вижу апельсин значит живу. Спаниель')
-
+// searchAnagrams('Вижу апельсин значит живу. Спаниель')
+module.exports = searchAnagrams;
 // for (let i = 0; i < resulMas.length-1; i++){
 //     for (let k = resulMas.length-1; k !== 0; k--){
           

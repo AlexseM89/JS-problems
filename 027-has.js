@@ -40,13 +40,17 @@ let peresechenie = obb.filter(x => path.includes(x))
 // console.log(peresechenie)
 if (peresechenie.length===0||peresechenie.length!=path.length){
     console.log(false)
+    return false;
 }else{
     console.log(true)
+    return true;
 }
 }
 else{
     console.log(false)
+    return false;
 }}
+
 has(['a'], {a: 1, o: {a: 2}, n: null,'a.b.c': undefined})
 has(['b'], {a: 1, o: {a: 2}, n: null,'a.b.c': undefined})
 has(['o', 'a'], {a: 1, o: {a: 2}, n: null,'a.b.c': undefined})
@@ -65,3 +69,5 @@ has(['n'], undefined)
 // console.log(Object.keys(ob4))
 // console.log(Object.keys(ob5))
 // console.log(Object.keys(ob6))
+
+module.exports = has;

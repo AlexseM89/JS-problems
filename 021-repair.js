@@ -16,10 +16,12 @@
  * @returns {number}
  */
 function repair(width, length, height) {
-    return Math.ceil((width*length*height)/16) ;
+    return Math.ceil((((width*height)+(length*height))*2)/16) ;
     // ((width+lenght)*height)/16
 }
-console.log(repair(1, 1, 3))
-console.log(repair(4, 4, 3))
-console.log(repair(4, 4, 4))
-// module.exports = repair;
+// console.log(repair(1, 1, 3))
+// console.log(repair(4, 4, 3))
+// console.log(repair(4, 4, 4))
+// console.log(repair(10, 4, 4))
+
+module.exports = repair;

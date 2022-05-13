@@ -26,4 +26,4 @@ function rle(value) {
 
 console.log(rle('AAABC'))
 console.log(rle('AAAaaB'))
-
+// module.exports = rle

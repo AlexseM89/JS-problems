@@ -14,14 +14,17 @@
  * @param {string} y
  * @returns {boolean}
  */
-function anagram(x, y) {
-    return undefined;
-}
+// function anagram(x, y) {
+//     return undefined;
+// }
 
-module.exports = anagram;
+
 
 function anagram(x, y){
     //проверим длину 2 слов(если не равны сразу ложь)
+    if (x.length == 0 || y.length ==0){
+        return false
+    }
     if(x.length !== y.length){
         return false
     }
@@ -34,6 +37,8 @@ function anagram(x, y){
 // возвращаем результат полного сравнения слов 1 и 2
     return slovo1 === slovo2
 }
-console.log(anagram('Волос', 'Слово'))
-console.log(anagram('Живу', 'Вижу'))
-console.log(anagram('Живу', 'Вижыфы'))
+// console.log(anagram('Волос', 'Слово'))
+// console.log(anagram('Живу', 'Вижу'))
+// console.log(anagram('Живу', 'Вижыфы'))
+// console.log(anagram('', ''))
+module.exports = anagram;

@@ -25,7 +25,9 @@ function decrypt(secret) {
     let inCorretcString = secret.split('');
     let res = inCorretcString.map(char => String.fromCharCode(char.charCodeAt(0) + 1));
     let correcrString = res.join("");
-return correcrString;
+    let str1 =  correcrString.replace(/{/g, 'a')
+    let str2 = str1.replace(/!/g, ' ') 
+return str2;
 }
 
 
@@ -68,7 +70,7 @@ return correcrString;
 // console.log(correcrString);
 // }
 
-console.log(decrypt('bnqqdbs'))
-console.log(decrypt('zmc vd hfmnqd rozbdr'))
+// console.log(decrypt('bnqqdbs'))
+// console.log(decrypt('zmc vd hfmnqd rozbdr'))
 
-// module.exports = decrypt;
+module.exports = decrypt;

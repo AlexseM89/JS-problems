@@ -87,8 +87,11 @@ function census(list) {
     let max = Math.max(...list.map(item => item.age));
     let res = list.findIndex(item => max && item.age == max);
         if (max === 0){
-            console.log(undefined)
-        } else {console.log(res +1);
+            return undefined;
+            // console.log(undefined)
+        } else {
+            // console.log(res +1);
+            return res +1
     }
     //    item.gender == 'Female')) {
     //    list.map(item => item.age = 0)
@@ -102,8 +105,10 @@ function census(list) {
         
 };
 
-census([{ age: 92, gender: 'Male' }, { age: 88, gender: 'Male' }, { age: 149, gender: 'Female' }])
-census([{ age: 40, gender: 'Female' }])
-census([{ age: 42, gender: 'Male' }, { age: 40, gender: 'Male' }])
+// census([{ age: 92, gender: 'Male' }, { age: 88, gender: 'Male' }, { age: 149, gender: 'Female' }])
+// census([{ age: 40, gender: 'Female' }])
+// census([{ age: 42, gender: 'Male' }, { age: 40, gender: 'Male' }])
+
+module.exports = census;
 
 

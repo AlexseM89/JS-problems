@@ -20,11 +20,11 @@
 // module.exports = isFibonacci;
 
 function isFibonacci(value) {
-    var fib;
-    var a = ((5 * Math.pow(value, 2)) + 4);
-    var b = ((5 * Math.pow(value, 2)) - 4);
-    var resultA = Math.sqrt(a) % 1 == 0;
-    var resultB = Math.sqrt(b) % 1 == 0;
+    let fib;
+    let a = ((5 * Math.pow(value, 2)) + 4);
+    let b = ((5 * Math.pow(value, 2)) - 4);
+    let resultA = Math.sqrt(a) % 1 == 0;
+    let resultB = Math.sqrt(b) % 1 == 0;
 
     if (resultA||resultB == true) {
         for (var n=1; n==b; n++) {
@@ -44,6 +44,6 @@ function isFibonacci(value) {
         console.log(fib)
     }
 }
-console.log(isFibonacci(55))
+console.log(isFibonacci(1))
 // isFibonacci(1)
 // isFibonacci(2)
