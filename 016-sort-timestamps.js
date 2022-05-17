@@ -96,5 +96,49 @@
 
 // let time = '19-00-00'
 // console.log(time.valueOf())
-console.log(new Date(1970,01,1).getTime('00:59:59'))
-console.log(new Date(1970,01,1).getTime())
+function sortTimestamps(list) {
+    // let testTime = '1970/02/01'
+    let ar = []
+    let testTime = []
+    let reversTime = []
+    // каждому элементу массива добавляем часть даты(произвольная дата выбрана мною)
+    for (let i = 0; i < list.length; i += 1) {
+        ar[i] = "2000/10/10 " + list[i];
+      }
+    //   console.log(ar)
+    // каждый элемент массива переводиться в миллисекунды
+      for (let i = 0; i < ar.length; i++) {
+        testTime[i] = new Date(ar[i]).getTime()
+        
+      }
+    //   console.log(testTime)
+//функция которая сравнивает элементы между собой 
+      let num = function compareNumeric(a, b) {
+        if (a > b) return 1;
+        if (a == b) return 0;
+        if (a < b) return -1;
+      }
+      //миллисекунды в массиве сортируем при помощи функции
+      let milTime = testTime.sort(num)
+    //   console.log(milTime)
+// отсортированый массив обратно конвертируем в дату(строковые значения)
+for (let i = 0; i < milTime.length; i++ ){
+reversTime[i]= (new Date(milTime[i])).toString()
+}
+// console.log(reversTime)
+
+// console.log(reversTime[0].slice(0,4))
+
+// for (let j = 0; j < reversTime; j += 1){
+//     finalArr[j] = (reversTime[j]).substring(0,4) 
+    
+// }
+//редактирую массив строк, оставляю только то что нужно
+return reversTime.map((num)=> num.slice(16,24))
+
+}
+module.exports = sortTimestamps;
+// sortTimestamps(['19:00:00', '00:04:20', '00:59:59'])
+
+// console.log(new Date(1970,01,1).getTime('00:59:59'))
+// console.log(new Date(1970,01,1).getTime())

@@ -13,17 +13,18 @@
 
 function rle(value) {
     // идем цыклом по строке и имеем аккумулятор и пустую строку итог
-    for(let i=0, a = 0, stroka = ''; i <= value.length; ++i) {
-        if(value.charAt(i) == value.charAt(i+1)) a++;
+    for(var i=0, counter = 0, stroka = ''; i <= value.length; ++i) {
+        if(value.charAt(i) == value.charAt(i+1)) counter++;
         else {
             //если следующий символ не такойже как предыдущий то аккумулятор +1 и итог к строке
-            stroka += value.charAt(i) + (a ? a + 1 : '');
-            a = 0;
+            stroka += (counter ? counter + 1 : '') + value.charAt(i);
+            counter = 0;
         }
+        
     }
     return stroka;
 }
 
-console.log(rle('AAABC'))
-console.log(rle('AAAaaB'))
-// module.exports = rle
+// console.log(rle('AAABC'))
+// console.log(rle('AAAaaB'))
+module.exports = rle

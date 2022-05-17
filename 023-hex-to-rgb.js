@@ -30,11 +30,11 @@ function hexToRgb(color) {
         console.log(itogResult)
         return itogResult
     } else {
-        let resultTwo = /^#{0,1}([a-f\d]{1})([a-f\d]{1})([a-f\d]{1})$/i.exec(color)
+        let resultTwo = /^#{0,1}([a-f\d]{0,1})([a-f\d]{0,1})([a-f\d]{0,1})$/i.exec(color)
         // console.log(resultTwo[1]+resultTwo[1])
         let onePartTwoF = resultTwo[1]+resultTwo[1]
         let twoPartTwoF = resultTwo[2]+resultTwo[2]
-        let freePartTwoF = resultTwo[2]+resultTwo[2]
+        let freePartTwoF = resultTwo[3]+resultTwo[3]
         let onePartTwo = parseInt(onePartTwoF, 16)
         let twoPartTwo = parseInt(twoPartTwoF, 16)
         let freePartTwo = parseInt(freePartTwoF, 16)
@@ -45,10 +45,11 @@ function hexToRgb(color) {
     
 }
 
-// module.exports = hexToRgb;
+module.exports = hexToRgb;
 
-hexToRgb('#000000')
-hexToRgb('#fff')
-hexToRgb('#800080')
-hexToRgb('#000')
-hexToRgb('#0f0')
+// hexToRgb('#000000')
+// hexToRgb('#fff')
+// hexToRgb('#800080')
+// hexToRgb('#000')
+// hexToRgb('#0f0')
+// hexToRgb('#F00')

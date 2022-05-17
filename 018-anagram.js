@@ -22,7 +22,7 @@
 
 function anagram(x, y){
     //проверим длину 2 слов(если не равны сразу ложь)
-    if (x.length == 0 || y.length ==0){
+    if (x.length == 0 || y.length == 0){
         return false
     }
     if(x.length !== y.length){

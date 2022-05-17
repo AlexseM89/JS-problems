@@ -16,7 +16,7 @@
  * @returns {boolean}
  */
 function parentheses(value) {
-    
+  let result  
    // let value = '(((()'
 // console.log(value[0])
 let a1 = 0
@@ -29,24 +29,24 @@ for (let i = 0; i < value.length; i++) {
         a2++
     }
 }
-if (value[0]== ")"||value== "") {
+if (value[0]== ")"||value== "" || value[value.length-1]=="(") {
     console.log(false)
-   
+   return result = false
   }else{
       console.log(a1===a2)
-   
+      return result = a1===a2;
     }
 
 }
 
-parentheses('')
-parentheses('()()')
-parentheses('(()())')
-parentheses('(()')
-parentheses(')')
-parentheses('()')
+// parentheses('')
+// parentheses('()()')
+// parentheses('(()())')
+// parentheses('(()')
+// parentheses(')')
+// parentheses('()')
 
-// module.exports = parentheses;
+module.exports = parentheses;
 
 //value[0]==')' || 
 

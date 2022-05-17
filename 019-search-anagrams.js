@@ -12,52 +12,143 @@
  * @returns {string}
  */
 function searchAnagrams(value) {
-   
+  let arrSlovaAnagrams = [];
+  let strokaBezZnakov = value.replace(/[\.\,\?]/g,'');
+  let arrayStrokaBezZnakov = strokaBezZnakov.split(' ');
+  arrSlovaAnagrams = arrayStrokaBezZnakov.map(function(elem){return elem.toLowerCase()});
+  arrSlovaAnagrams = arrSlovaAnagrams.map(function(elem){ return elem.split("").sort().join("")})
 
-
-// 
-// let value = 'Вижу апельсин значит живу. Спаниель';
-//стартовую строку value очищаем от точек и разбиываем по пробелам на массив строк
-var b = value.replace(/\./g,'').split(' '); 
-// console.log(b);
-let resulMas = []
-for (let i = 0; i < b.length; i++) {
-    let firstWord = b[i].toLowerCase().split("").sort().join("");
-    // if (b[i].toLowerCase().split("").sort().join("") == firstWord) 
-    resulMas.push(firstWord);
+  let arrayAnagrams = arrSlovaAnagrams.filter(function(elem, index, array){
+    let counter = array.reduce(function(accumulator, currentValue, index, array){
+      return  elem === currentValue ? ++accumulator : accumulator 
+    },0)
+    console.log(elem,counter)
+    return counter > 1 ? true : false
+  })
+  console.log(arrayAnagrams, arrayStrokaBezZnakov, arrSlovaAnagrams)
+  let filterarrayStrokaBezZnakov = arrayStrokaBezZnakov.filter(elem => arrayAnagrams.includes(elem.toLowerCase().split("").sort().join("")))
+  let convertArray = filterarrayStrokaBezZnakov.join(" ");
+  return convertArray;
 }
+
+console.log(searchAnagrams('Вижу апельсин значит живу. Спаниель'))
+
+
+
+
+
+
+
+
+
+// function searchAnagrams(value) {
+   
+// // let value = 'Вижу апельсин значит живу. Спаниель';
+// //стартовую строку value очищаем от точек и разбиываем по пробелам на массив строк
+// var b = value.replace(/[\.\,\?]/g,'').split(' '); 
+// // console.log(b);
+// let resulMas = []
+// // console.log(resulMas)
+// for (let i = 0; i < b.length; i++) {
+//     let firstWord = b[i].toLowerCase().split("").sort().join(""); // каждое слово из массива b берем создаем массив букв сортируем по алфавиту и снова делаем строку
+//     // if (b[i].toLowerCase().split("").sort().join("") == firstWord) 
+//     resulMas.push(firstWord); 
+    
+// }
+
 // console.log(resulMas)
 
-// let filterWords = resulMas.filter((v,i,a)=>a.indexOf(v)==i); 
-// console.log(filterWords)
 
 
-var map = resulMas.reduce((a,val)=>{
-    a[val] = (a[val]? a[val]+1 :1) ;
-    return a;
-  },{});
-  var result;
-  Object.keys(map).forEach((key)=>{
-    if(map[key] === 1)
-      result = key;
-  });
-//   console.log(result)
-  let slovoRes = result.toString()
-//   console.log(slovoRes)
+// // let filterWords = resulMas.filter((v,i,a)=>a.indexOf(v)==i); 
+// // console.log(filterWords)
+// let map = resulMas.reduce((a,val)=>{
+//     a[val] = (a[val]? a[val]+1 :1) ;
+//     return a;
+//   },[]);
+//   console.log(map)
+//   var result;
+//   Object.keys(map).forEach((key)=>{
+//     if(map[key] === 1)
+//       result = key;
+//       // console.log(result)
+//   });
+//   // console.log(map)
+// //   console.log(result)
+// let ayaya = []
+// for (const [key, value] of Object.entries(map)) {
+//     if (value === 2) {
+        
+//       ayaya.push(key)
+//         }
+// let resulMas2=[]
+//  for (let i=0; i<resulMas.length; i++){
+// resulMas[i]===ayaya[i]
+//  }       
+// }
+// console.log(ayaya)
 
-  let index = resulMas.indexOf(slovoRes)
-//   console.log(index)
+// let  filter1 = resulMas.filter(i => ayaya.includes(i))
+// console.log(filter1)
 
-  delete(b[index])
+// //   console.log(index)
+// // console.log(index)
+// //   delete(b[index])
+// //   console.log(b)
+
+//   let itogAnagram = b.join(" ")
+//   // console.log(itogAnagram)
+//   return itogAnagram
+
+// }
+// console.log(searchAnagrams('Вижу апельсин значит живу. Спаниель'))
+// console.log(searchAnagrams('Какой резон убирать зерно, если его негде хранить?'))
+
+
+
+// function searchAnagrams(value) {
+//   let b = value.replace(/[\.\,\?]/g,'').split(' '); 
 //   console.log(b)
+//   let itog = []
+//   let resulMas = []
+//   // let resulMasAl
+//   for (let i = 0; i < b.length; i++) {
+//     let firstWord = b[i].toLowerCase().split("").sort().join(""); // каждое слово из массива b берем создаем массив букв сортируем по алфавиту и снова делаем строку
+//     // if (b[i].toLowerCase().split("").sort().join("") == firstWord) 
+//     resulMas.push(firstWord); 
+    
+// }
+// console.log(resulMas)
+// let resulMasAl = resulMas.join(" ")
+// console.log(resulMasAl)
+// let counter = 0 
+// for (let i=0 ; i<resulMas.length; i++){
+//   console.log(resulMas)
+//   let aaa = resulMas[i]
+//   console.log(aaa)
+//   let regex = new RegExp(aaa)
+//   // console.log(regex)
+//   let result = regex.test(resulMasAl)
+//   console.log(result)
+//   if (regex.test(resulMasAl)){
+//     counter = counter + 1
+//   }
+//   if (counter>1){
+//     itog.push(resulMas[i])
+//   } else {
+//     itog.push('')
+//   }
+//   counter = 0  
+// }
+// console.log(itog.join(" "))
+// return itog.join("")
+// }
+// console.log(searchAnagrams('Вяжу и вижу'))
+// // console.log(searchAnagrams('Вижу и вижу'))
+// // console.log(searchAnagrams('Вижу апельсин значит живу. Спаниель'))
 
-  let itogAnagram = b.join(" ")
-  // console.log(itogAnagram)
-  return itogAnagram
-
-}
-// searchAnagrams('Вижу апельсин значит живу. Спаниель')
 module.exports = searchAnagrams;
+
 // for (let i = 0; i < resulMas.length-1; i++){
 //     for (let k = resulMas.length-1; k !== 0; k--){
           
