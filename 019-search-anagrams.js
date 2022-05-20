@@ -12,33 +12,27 @@
  * @returns {string}
  */
 function searchAnagrams(value) {
-  let arrSlovaAnagrams = [];
-  let strokaBezZnakov = value.replace(/[\.\,\?]/g,'');
-  let arrayStrokaBezZnakov = strokaBezZnakov.split(' ');
-  arrSlovaAnagrams = arrayStrokaBezZnakov.map(function(elem){return elem.toLowerCase()});
-  arrSlovaAnagrams = arrSlovaAnagrams.map(function(elem){ return elem.split("").sort().join("")})
-
-  let arrayAnagrams = arrSlovaAnagrams.filter(function(elem, index, array){
-    let counter = array.reduce(function(accumulator, currentValue, index, array){
-      return  elem === currentValue ? ++accumulator : accumulator 
-    },0)
-    console.log(elem,counter)
-    return counter > 1 ? true : false
-  })
-  console.log(arrayAnagrams, arrayStrokaBezZnakov, arrSlovaAnagrams)
-  let filterarrayStrokaBezZnakov = arrayStrokaBezZnakov.filter(elem => arrayAnagrams.includes(elem.toLowerCase().split("").sort().join("")))
-  let convertArray = filterarrayStrokaBezZnakov.join(" ");
-  return convertArray;
+  let editStr = value.replace(/[\.\,\?]/g,'').split(' ');
+  let editArray = editStr.map(elem =>elem.toLowerCase().split("").sort().join(""));;
+  // let arrayStrokaBezZnakov = strokaBezZnakov.split(' ');
+  // arrAnagrams = arrayStrokaBezZnakov.map(elem =>elem.toLowerCase().split("").sort().join(""));
+  let anagramsArray = editArray.filter((elem, _, array)=>{
+  let counter = array.reduce((accumulator, currentValue) => elem === currentValue ? ++accumulator : accumulator, 0)
+    return counter > 1 || false
+  }); 
+  let finalyAnagramArr = editStr.filter(elem => anagramsArray.includes(elem.toLowerCase().split("").sort().join("")))
+  let result = finalyAnagramArr.join(" ");
+  return result;
 }
 
 console.log(searchAnagrams('Вижу апельсин значит живу. Спаниель'))
 
 
 
+ // console.log(elem,counter)
+// arrSlovaAnagrams = arrSlovaAnagrams.map(elem => elem.split("").sort().join(""))
 
-
-
-
+// console.log(arrayAnagrams, arrayStrokaBezZnakov, arrSlovaAnagrams)
 
 
 // function searchAnagrams(value) {
