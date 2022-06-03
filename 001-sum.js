@@ -23,9 +23,4 @@ function sum(n) {
       return 1
    };
 };
-
-// console.log(sum(5));
-// console.log(sum(-100));
-// console.log(sum(11));
-
 module.exports = sum;
