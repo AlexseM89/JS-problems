@@ -18,23 +18,16 @@
  */
 
 function getTimeDelta(x, y) {
-        let timeHX = x[0]+x[1];
-        let timeHY = y[0]+y[1];
-        let timeMX = x[3]+x[4];
-        let timeMY = y[3]+y[4];
-        let timeSX = x[6]+x[7];
-        let timeSY = y[6]+y[7];
-        // console.log(timeHX)
-        let timeHF = Number(timeHY) - Number(timeHX);
-        // console.log(timeHF)
-        let timeMF = Number(timeMY) - Number(timeMX);
-        let timeSF = Number(timeSY) - Number(timeSX);
-        let itog = timeHF*3600 + timeMF*60 + timeSF;
+        const timeHX = x[0]+x[1];
+        const timeHY = y[0]+y[1];
+        const timeMX = x[3]+x[4];
+        const timeMY = y[3]+y[4];
+        const timeSX = x[6]+x[7];
+        const timeSY = y[6]+y[7];
+        const timeHF = Number(timeHY) - Number(timeHX);
+        const timeMF = Number(timeMY) - Number(timeMX);
+        const timeSF = Number(timeSY) - Number(timeSX);
+        const itog = timeHF*3600 + timeMF*60 + timeSF;
   return itog;
 };
-
-// console.log(getTimeDelta('00:00:00', '00:00:01'));
-// console.log(getTimeDelta('01:01:01', '02:02:02'));
-// console.log(getTimeDelta('01:19:30', '01:20:20'));
-
 module.exports = getTimeDelta;

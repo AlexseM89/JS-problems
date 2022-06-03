@@ -16,39 +16,18 @@
  * @param {number} n >= 0
  * @returns {number}
  */
-// function fibonacci(n) {
-//     return undefined;
-// }
-
-// module.exports = fibonacci;
-
-
-
-//   console.log(fibonacci(2))
-//   console.log(fibonacci(3))
-//   console.log(fibonacci(7))
-//   console.log(fibonacci(0))
-
   function fibonacci(n){
     if(n == 0){
       return 0;
     } else {
       let a = 1;        //a = fib(1)
       let b = 1;        //b = fib(2)
-    for (let i=3; i <= n; i++) {   // начинаем с 3 потому что 1 и2 уже известно выше
+    for (let i = 3; i <= n; i++) {   // начинаем с 3 потому что 1 и2 уже известно выше
         let c = a + b;     // c= fib(3)
         a = b;            // теперь a = fib(2)
         b = c;            // а с = fib(3)
     };
     return b;
-  }
+  };
 };
-
-  // console.log(fibonacci(2))
-  // console.log(fibonacci(3))
-  // console.log(fibonacci(7))
-  // console.log(fibonacci(10))
-  // console.log(fibonacci(0))
-  
-
 module.exports = fibonacci;

@@ -16,40 +16,24 @@
 // module.exports = hexToRgb;
 
 function hexToRgb(color) {
-    let lengthString = color.length
-    if (lengthString===7){
-        let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color)
-        // console.log(result)
-         let onePart = parseInt(result[1], 16)
-        //  let onePartStr = onePart.toString() 
-        //  console.log(onePart)
-         let twoPart = parseInt(result[2], 16)
-         let freePart = parseInt(result[3], 16)
-         let itogResult = 'rgb('+ onePart+', '+twoPart+', '+freePart+')'
-        // let itogResult = 'rgb(${onePart} , ${twoPart}, ${freePart})'
-        console.log(itogResult)
+    const lengthString = color.length
+    if (lengthString===7) {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color)
+        const onePart = parseInt(result[1], 16)
+        const twoPart = parseInt(result[2], 16)
+        const freePart = parseInt(result[3], 16)
+        const itogResult = 'rgb('+ onePart+', '+twoPart+', '+freePart+')'
         return itogResult
     } else {
-        let resultTwo = /^#{0,1}([a-f\d]{0,1})([a-f\d]{0,1})([a-f\d]{0,1})$/i.exec(color)
-        // console.log(resultTwo[1]+resultTwo[1])
-        let onePartTwoF = resultTwo[1]+resultTwo[1]
-        let twoPartTwoF = resultTwo[2]+resultTwo[2]
-        let freePartTwoF = resultTwo[3]+resultTwo[3]
-        let onePartTwo = parseInt(onePartTwoF, 16)
-        let twoPartTwo = parseInt(twoPartTwoF, 16)
-        let freePartTwo = parseInt(freePartTwoF, 16)
-        let itogResultTwo = 'rgb('+ onePartTwo+', '+twoPartTwo+', '+freePartTwo+')'
-        console.log(itogResultTwo)
+        const resultTwo = /^#{0,1}([a-f\d]{0,1})([a-f\d]{0,1})([a-f\d]{0,1})$/i.exec(color)
+        const onePartTwoF = resultTwo[1]+resultTwo[1]
+        const twoPartTwoF = resultTwo[2]+resultTwo[2]
+        const freePartTwoF = resultTwo[3]+resultTwo[3]
+        const onePartTwo = parseInt(onePartTwoF, 16)
+        const twoPartTwo = parseInt(twoPartTwoF, 16)
+        const freePartTwo = parseInt(freePartTwoF, 16)
+        const itogResultTwo = 'rgb('+ onePartTwo+', '+twoPartTwo+', '+freePartTwo+')'
         return itogResultTwo
-    }
-    
-}
-
+    };
+};
 module.exports = hexToRgb;
-
-// hexToRgb('#000000')
-// hexToRgb('#fff')
-// hexToRgb('#800080')
-// hexToRgb('#000')
-// hexToRgb('#0f0')
-// hexToRgb('#F00')

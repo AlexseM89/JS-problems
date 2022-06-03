@@ -14,17 +14,9 @@
  * @returns {boolean}
  */
 
-function checkTicket(number) {
-//преобразуем каждую цыфру по типу в число	
-	let sum123 = Number(number[0]) + Number(number[1]) + Number(number[2]);
-//   console.log(sum123)
-	let sum456 = Number(number[3]) + Number(number[4]) + Number(number[5]);
-	
+function checkTicket(number) {	
+	const sum123 = Number(number[0]) + Number(number[1]) + Number(number[2]);
+	const sum456 = Number(number[3]) + Number(number[4]) + Number(number[5]);
 	return sum123 == sum456;
 };
-
-// console.log(checkTicket('005212'))
-// console.log(checkTicket('133700'))
-// console.log(checkTicket('123032'))
-
 module.exports = checkTicket;

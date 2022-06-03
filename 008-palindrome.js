@@ -14,13 +14,8 @@
  */
 
 function isPalindrome(value) {
-    let strR = value.split('').reverse().join('');
-    strL = value;
-    return strL === strR;
+    const strRight2Left = value.split('').reverse().join('');
+    strLeft2Right = value;
+    return strLeft2Right === strRight2Left;
 };
-
-// isPalindrome('121');
-// isPalindrome('boob');
-// isPalindrome('true');
-
 module.exports = isPalindrome;

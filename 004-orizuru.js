@@ -20,19 +20,17 @@
  */
 
 function computeOrizurus(total) {
-    let totalF = [];
-    let petr = total/6;
-    let serg = total/6;
-    let katya = ((total/6)*4);
-    totalF[0] = petr;
-    totalF[1] = katya;
-    totalF[2] = serg;
+    const totalF = [];
+    const petr = total/6;
+    const petrDrob = petr % 1;
+    const serg = total/6;
+    const sergDrob = petr % 1;
+    const katya = ((total/6)*4);
+    const katyaDrob = petr % 1;
+    const itogKatya = katya + katyaDrob + sergDrob + petrDrob;
+    totalF[0] = Math.floor(petr);
+    totalF[1] = Math.floor(itogKatya);
+    totalF[2] = Math.floor(serg);
     return totalF;
 };
-
-// console.log(computeOrizurus(6))
-// console.log(computeOrizurus(24))
-// console.log(computeOrizurus(12))
-// console.log(computeOrizurus(18))
-
 module.exports = computeOrizurus;

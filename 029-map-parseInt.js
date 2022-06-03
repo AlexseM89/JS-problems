@@ -15,65 +15,8 @@
  * @param {string[]} array
  * @returns {number[]}
  */
-//  function map(array = []) {
-//     return array.map(parseInt);
-// }
-// console.log(map(['0', '0', '0']))
-
-// module.exports = map;
 function map(array = []) {
-    return array.map(function(element, index, array){
-            return parseInt(element)});
-}
-console.log(map(['0', '1', '2']))
-
+    return array.map(function(element, index, array) {
+                        return parseInt(element)});
+};
 module.exports = map;
-// &
-// 11 & 01 =1
-
-// 111 & 101 = 101
-// 11 & 02 = 2
-// 31 & 11 = 31
-// ~10101=01010
-// | 
-// 111 & 101
-// 111 & 011= 11
-// ^
-// 11^01=11
-
-// **
-// typeof
-
-// -=
-// +=
-// %=
-// /=
-// , (2+3, 1+1)
-
-// !!
-// ?? 
-
-// &=
-// |=
-// ^=
-// new
-
-// '' && 3
-// 4 && 3
-// [] + []
-// [1,2]+[]
-// []*[]
-// []*[1,2]
-// []-[]
-// []-[1,2]
-// {}+{}
-// 4+{}
-// {}+4
-// {}+{a:1}
-// {}*{}
-// {}*4
-
-// {}-{}
-// {} && 4 && 6
-// {}||4
-

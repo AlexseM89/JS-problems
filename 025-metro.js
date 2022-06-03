@@ -16,47 +16,25 @@
  * @param {number} y - станция высадки
  * @returns {number}
  */
-// function metro(x, y) {
-//     return undefined;
-// }
-
-
-function metro(x, y) {
-   
-let result
-  if (x>y){
-        let putA = (x-y)-1
-        let putB = (y-1)+(13-x)
-        if (putA>putB){
-            result = putB
-            console.log(putB)
-        }else{
-            result = putA
-            console.log(putA)
-        }
-    }else{
-        let putA = (y-x)-1
-        let putB = (x-1)+(13-y)
-        if (putA>putB){
-            result = putB
-            console.log(putB)
-        }else{
-            result = putA
-            console.log(putA)
-        }
+function metro(x, y) { 
+    let result;
+    if (x > y) {
+        const putA = (x - y) - 1;
+        const putB = (y - 1) + (13 - x);
+        if (putA > putB) {
+            result = putB;
+        } else {
+            result = putA;
+        };
+    } else {
+        const putA = (y - x) - 1;
+        const putB = (x - 1) + (13 - y);
+        if (putA > putB) {
+            result = putB;
+        } else {
+            result = putA;
+        };
     };
-    return result
-}
-// console.log(metro(1, 2))
-// metro(1, 2)
-// metro(1, 3)
-// metro(13, 1)
-// metro(1, 13)
-// metro(1, 7)
-// metro(1, 8)
-// metro(13, 6)
-// metro(13, 7)
-// metro(11, 7)
-// metro(2, 7)
-
+    return result;
+};
 module.exports = metro;

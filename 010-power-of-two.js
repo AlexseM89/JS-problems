@@ -17,10 +17,4 @@ function getPower(n) {
         return Math.log2(n);
     };
   };
-
-//   console.log(getPower(256));
-//   console.log(getPower(3));
-//   console.log(getPower(8));
-//   console.log(getPower(2));
-
   module.exports = getPower;

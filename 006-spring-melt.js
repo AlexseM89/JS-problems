@@ -19,41 +19,18 @@
  */
 
 function getSpringMeltStreak(temperature) {
-    let maxIndex = 0;       //максимальный индекс
-    let maxLenght = 0;      //максимальная длинна искомого массива
-    let currentLenght = 0;  //счетчик длинны искомого массива
-    let currentIndex = 0;   //счетчик индекса
-
-    for (let k=0; k<temperature.length; k++) {  //идем по массиву temperature
+    let maxLenght = 0;
+    let currentLenght = 0;
+    for (let k = 0 ; k < temperature.length ; k++) {
             if (temperature[k] > 0) {
-// если значение элемента >0 счетчик длинны +1
                 currentLenght++;
-//начинается новая последовательность удовлетворяющая условию
-//начальный индекс
-            // if (currentLenght > 1) {      
-            //      currentIndex = k
-            // };
-            if (currentLenght > maxLenght) {    //если счетчик длины больше максимальной длинны
-                maxLenght = currentLenght;      // то сохраняем новое значение
-                // maxIndex = currentIndex;        //присваеваем новый индекс
-                };
-            // console.log(k)
+            if (currentLenght > maxLenght) {
+                maxLenght = currentLenght;
+            };
             } else {
-                
-                   currentLenght = 0 ;                 //сброс счетчика
-                };
+                currentLenght = 0;
+            };
     };
-        if (maxLenght > 0) {
-            console.log(maxLenght);
-        } else {
-            console.log(0); 
-        };  
     return maxLenght;
  };
-
-//  getSpringMeltStreak([10, 20, 30, 1, 10, 1, 2, 3])
-//  getSpringMeltStreak([-20, 30, -40, 50, 10, -10])
-//  getSpringMeltStreak([10, 20, 30, 0, -10, 5, 8, 1, 2, 3])
-//  getSpringMeltStreak([-10, 0, -10, 0, -10])
-
  module.exports = getSpringMeltStreak;

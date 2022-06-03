@@ -19,19 +19,9 @@
 //  */
 
 function validatePassword(password) {
-    // console.log(password.length > 7)
     return /[a-z]/.test(password) &&   // проверяем есть ли мелкие буквы
            /[A-Z]/.test(password) &&   // проверяем есть ли большие буквы
            /\d/.test(password) &&    // проверка есть ли цыфры
            password.length > 6 ;    // проверяем что бы длина была более 7 символов
 }
-
-// console.log(validatePassword('abc4DEFG'))
-// console.log(validatePassword('abcdefg'))
-// console.log(validatePassword('abcdefG'))
-// console.log(validatePassword('abc456F'))
-// console.log(validatePassword('abcdef7'))
-// console.log(validatePassword('ABCDEF7'))
-// console.log(validatePassword('abc456F'))
-
 module.exports = validatePassword;
